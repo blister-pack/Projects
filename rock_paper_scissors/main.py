@@ -149,3 +149,4 @@ if __name__ == "__main__":
     # L.connect()
     # print(L.last_node.next.data)
     play_game()
+    # sync check
