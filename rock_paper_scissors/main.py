@@ -1,4 +1,8 @@
 from random import randint
+from turtle import width
+from PyQt5 import QtWidgets
+from PyQt5.QtWidgets import QApplication, QMainWindow
+import sys
 
 
 class Node:
@@ -49,8 +53,9 @@ class Linked_rps:
 # DONE make a game function that actually runs a game and counts scores
 # DONE there must be a score counter to make the game stop
 # DONE function that evaluates a round and returns its result
-# TODO upload to git
+# DONE upload to git
 # TODO make a GUI (PyQt)
+# TODO make it run on Android
 # TODO make the program get opponent's move from a website
 # TODO mp3 sound
 # DONE make circular list be printed but showing the connection to the head
@@ -139,6 +144,24 @@ def play_game():
         print("Congratulations, you win!... Absolutely nothing!")
 
 
+def window():
+    app = QApplication(sys.argv)
+    win = QMainWindow()
+    win.setGeometry(200, 200, 300, 300)
+    win.setWindowTitle("Rock Paper Scissors")
+    
+    label = QtWidgets.QLabel(win)
+    label.setText("my first label")
+    label.move(50,50)
+    
+    b1 = QtWidgets.QPushButton(win)
+    b1.setText("Click me")
+
+
+    win.show()
+    sys.exit(app.exec_())
+
+
 if __name__ == "__main__":
     # L = Linked_rps()
     # L.append("rock")
@@ -148,5 +171,6 @@ if __name__ == "__main__":
     # print(L)
     # L.connect()
     # print(L.last_node.next.data)
-    play_game()
-    # sync check
+
+    #play_game()
+    window()
