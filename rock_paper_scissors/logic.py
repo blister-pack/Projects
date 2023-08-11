@@ -54,7 +54,7 @@ class Linked_rps:
 # DONE there must be a score counter to make the game stop
 # DONE function that evaluates a round and returns its result
 # DONE upload to git
-# TODO make a GUI (PyQt)
+# DONE make a GUI (PyQt)
 # TODO make it run on Android
 # TODO make the program get opponent's move from a website
 # TODO mp3 sound
