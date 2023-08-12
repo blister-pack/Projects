@@ -5,6 +5,7 @@ from PyQt5.QtWidgets import QApplication, QMainWindow
 import sys
 
 
+
 class Node:
     def __init__(self, data) -> None:
         self.data = data
@@ -144,33 +145,16 @@ def play_game():
         print("Congratulations, you win!... Absolutely nothing!")
 
 
-def window():
-    app = QApplication(sys.argv)
-    win = QMainWindow()
-    win.setGeometry(200, 200, 300, 300)
-    win.setWindowTitle("Rock Paper Scissors")
-    
-    label = QtWidgets.QLabel(win)
-    label.setText("my first label")
-    label.move(50,50)
-    
-    b1 = QtWidgets.QPushButton(win)
-    b1.setText("Click me")
-
-
-    win.show()
-    sys.exit(app.exec_())
-
 
 if __name__ == "__main__":
-    # L = Linked_rps()
-    # L.append("rock")
-    # L.append("scissor")
-    # L.append("paper")
+    L = Linked_rps()
+    L.append("rock")
+    L.append("scissor")
+    L.append("paper")
 
-    # print(L)
-    # L.connect()
-    # print(L.last_node.next.data)
+    print(L)
+    L.connect()
+    print(L.last_node.next.data)
 
-    #play_game()
-    window()
+    play_game()
+

@@ -12,11 +12,10 @@ class RockPaperScissorsApp(QtWidgets.QMainWindow, Ui_RockPaperScissors):
     def __init__(self) -> None:
         super().__init__()
         self.setupUi(self)
-        self.logic = None
 
         # button setup
         self.comboBox.currentIndexChanged.connect(self.player_image_move_change)
-
+        self.play_button.clicked.connect(self.play_round)
         # ------------------------------------------------------
 
     def player_image_move_change(self):
@@ -35,13 +34,15 @@ class RockPaperScissorsApp(QtWidgets.QMainWindow, Ui_RockPaperScissors):
             "/home/blister-pack/Documents/code_projects/1WORK/Projects/rock_paper_scissors/sprites/scissors.png"
         )
 
-        selected_move = self.comboBox.currentText()
-        if selected_move == "Rock":
+        self.selected_move = self.comboBox.currentText()
+
+        if self.selected_move == "Rock":
             self.player_move_label.setPixmap(rock_img)
-        elif selected_move == "Paper":
+        elif self.selected_move == "Paper":
             self.player_move_label.setPixmap(paper_img)
-        elif selected_move == "Scissors":
+        elif self.selected_move == "Scissors":
             self.player_move_label.setPixmap(scissors_img)
+
 
     def pc_move_image_change(self):
         pass
@@ -49,6 +50,25 @@ class RockPaperScissorsApp(QtWidgets.QMainWindow, Ui_RockPaperScissors):
     def change_scores(self):
         pass
 
+    def play_round(self):
+        def reformat_selected_move():
+            '''
+            function to manipulate the string to match
+            the strings inside the logic, only then can I get the
+            right move
+            '''
+        if self.selected_move == "Rock":
+            self.selected_move = "rock"
+        elif self.selected_move == "Paper":
+            self.selected_move = "paper"
+        elif self.selected_move == "Scissors":
+            self.selected_move = "scissor"
+
+        # hope this doesn't cause conflicts with the image changing function
+
+        reformat_selected_move()
+        chosen_move = player_move(self.selected_move)
+        # I think I need to use the play_game function and am doing this wrong
 
 if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)
