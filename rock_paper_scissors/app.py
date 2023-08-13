@@ -18,6 +18,8 @@ class RockPaperScissorsApp(QtWidgets.QMainWindow, Ui_RockPaperScissors):
         self.play_button.clicked.connect(self.play_round)
         # ------------------------------------------------------
 
+        self.selected_move = "Rock"
+
     def player_image_move_change(self):
         """
         this function changes the image that represents
@@ -43,20 +45,24 @@ class RockPaperScissorsApp(QtWidgets.QMainWindow, Ui_RockPaperScissors):
         elif self.selected_move == "Scissors":
             self.player_move_label.setPixmap(scissors_img)
 
-
     def pc_move_image_change(self):
         pass
 
     def change_scores(self):
         pass
 
+    # this game needs to be played differently than the original logic
+    # originally, the logic was supposed to keep the game going until
+    # someone reached a score of 3 - here it's more or less like playing
+    # three small games (rounds) when the button is clicked
     def play_round(self):
         def reformat_selected_move():
-            '''
+            """
             function to manipulate the string to match
             the strings inside the logic, only then can I get the
             right move
-            '''
+            """
+
         if self.selected_move == "Rock":
             self.selected_move = "rock"
         elif self.selected_move == "Paper":
@@ -65,10 +71,16 @@ class RockPaperScissorsApp(QtWidgets.QMainWindow, Ui_RockPaperScissors):
             self.selected_move = "scissor"
 
         # hope this doesn't cause conflicts with the image changing function
+        # I still get the object associated with seleted_move and not
+        # the string.......... what?
 
         reformat_selected_move()
         chosen_move = player_move(self.selected_move)
+        print(chosen_move.data)
+        pc_move = computer_move()
+        print(pc_move.data)
         # I think I need to use the play_game function and am doing this wrong
+
 
 if __name__ == "__main__":
     app = QtWidgets.QApplication(sys.argv)

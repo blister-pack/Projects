@@ -147,10 +147,10 @@ def play_game():
 
 
 if __name__ == "__main__":
-    L = Linked_rps()
-    L.append("rock")
-    L.append("scissor")
-    L.append("paper")
+    # L = Linked_rps()
+    # L.append("rock")
+    # L.append("scissor")
+    # L.append("paper")
 
     print(L)
     L.connect()
