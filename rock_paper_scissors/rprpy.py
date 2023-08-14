@@ -28,13 +28,21 @@ class Ui_RockPaperScissors(object):
         self.player_move_label = QtWidgets.QLabel(self.frametop)
         self.player_move_label.setGeometry(QtCore.QRect(180, 80, 201, 171))
         self.player_move_label.setText("")
-        self.player_move_label.setPixmap(QtGui.QPixmap("/home/blister-pack/Documents/code_projects/1WORK/Projects/rock_paper_scissors/sprites/rock.png"))
+        self.player_move_label.setPixmap(
+            QtGui.QPixmap(
+                "/home/blister-pack/Documents/code_projects/1WORK/Projects/rock_paper_scissors/sprites/rock.png"
+            )
+        )
         self.player_move_label.setScaledContents(True)
         self.player_move_label.setObjectName("player_move_label")
         self.pc_move_label = QtWidgets.QLabel(self.frametop)
         self.pc_move_label.setGeometry(QtCore.QRect(650, 80, 201, 181))
         self.pc_move_label.setText("")
-        self.pc_move_label.setPixmap(QtGui.QPixmap("/home/blister-pack/Documents/code_projects/1WORK/Projects/rock_paper_scissors/sprites/interrogation.png"))
+        self.pc_move_label.setPixmap(
+            QtGui.QPixmap(
+                "/home/blister-pack/Documents/code_projects/1WORK/Projects/rock_paper_scissors/sprites/interrogation.png"
+            )
+        )
         self.pc_move_label.setScaledContents(True)
         self.pc_move_label.setObjectName("pc_move_label")
         self.comboBox = QtWidgets.QComboBox(self.frametop)
@@ -96,22 +104,29 @@ class Ui_RockPaperScissors(object):
         self.comboBox.setItemText(2, _translate("RockPaperScissors", "Paper"))
         self.player_score_label.setText(_translate("RockPaperScissors", "0"))
         self.pc_score_label.setText(_translate("RockPaperScissors", "0"))
-        self.textEdit.setHtml(_translate("RockPaperScissors", "<!DOCTYPE HTML PUBLIC \"-//W3C//DTD HTML 4.0//EN\" \"http://www.w3.org/TR/REC-html40/strict.dtd\">\n"
-"<html><head><meta name=\"qrichtext\" content=\"1\" /><style type=\"text/css\">\n"
-"p, li { white-space: pre-wrap; }\n"
-"</style></head><body style=\" font-family:\'Ubuntu\'; font-size:26pt; font-weight:400; font-style:normal;\">\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:14pt;\">Rules:</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:14pt;\">-First to score 3 points wins</span></p>\n"
-"<p style=\" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;\"><span style=\" font-size:14pt;\">-Computer chooses randomly</span></p></body></html>"))
+        self.textEdit.setHtml(
+            _translate(
+                "RockPaperScissors",
+                '<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0//EN" "http://www.w3.org/TR/REC-html40/strict.dtd">\n'
+                '<html><head><meta name="qrichtext" content="1" /><style type="text/css">\n'
+                "p, li { white-space: pre-wrap; }\n"
+                "</style></head><body style=\" font-family:'Ubuntu'; font-size:26pt; font-weight:400; font-style:normal;\">\n"
+                '<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-size:14pt;">Rules:</span></p>\n'
+                '<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-size:14pt;">-First to score 3 points wins</span></p>\n'
+                '<p style=" margin-top:0px; margin-bottom:0px; margin-left:0px; margin-right:0px; -qt-block-indent:0; text-indent:0px;"><span style=" font-size:14pt;">-Computer chooses randomly</span></p></body></html>',
+            )
+        )
         self.play_button.setText(_translate("RockPaperScissors", "Play"))
         self.label.setText(_translate("RockPaperScissors", "Rock, Paper, Scissors"))
 
 
 if __name__ == "__main__":
     import sys
+
     app = QtWidgets.QApplication(sys.argv)
     RockPaperScissors = QtWidgets.QMainWindow()
     ui = Ui_RockPaperScissors()
     ui.setupUi(RockPaperScissors)
+    RockPaperScissors.setWindowTitle("lol")
     RockPaperScissors.show()
     sys.exit(app.exec_())
