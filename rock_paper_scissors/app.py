@@ -3,6 +3,7 @@ from logic import *
 from rprpy import *
 import sys
 from PyQt5 import QtCore, QtWidgets
+from PyQt5.QtWidgets import QMessageBox
 import os
 
 # for it to load the images I have to run it from its own folder and idk why
@@ -77,9 +78,23 @@ class RockPaperScissorsApp(QtWidgets.QMainWindow, Ui_RockPaperScissors):
         make a popup window stating the winner and exit the program"""
 
         if self.player_score == 3:
-            print("Player wins")
+            self.winner_popup()
+            window.close()
         if self.pc_score == 3:
-            print("PC wins")
+            self.loser_popup()
+            window.close()
+
+    def winner_popup(self):
+        message = QMessageBox()
+        message.setWindowTitle("You won the game!!!")
+        message.setText("YOU WON YAY")
+        message.exec_()
+
+    def loser_popup(self):
+        message = QMessageBox()
+        message.setWindowTitle("Computer Wins")
+        message.setText("YOU LOST BOO")
+        message.exec_()
 
     # this game needs to be played differently than the original logic
     # originally, the logic was supposed to keep the game going until
