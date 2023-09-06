@@ -3,6 +3,8 @@ from logic import *
 from rprpy import *
 import sys
 from PyQt5 import QtCore, QtWidgets
+from PyQt5.QtWidgets import QMessageBox
+import os
 
 # for it to load the images I have to run it from its own folder and idk why
 # works w full path........
@@ -13,25 +15,30 @@ class RockPaperScissorsApp(QtWidgets.QMainWindow, Ui_RockPaperScissors):
         super().__init__()
         self.setupUi(self)
 
+        rock_img_path = os.path.join("rock_paper_scissors/sprites", "rock.png")
+        paper_img_path = os.path.join("rock_paper_scissors/sprites", "paper.png")
+        scissors_img_path = os.path.join("rock_paper_scissors/sprites", "scissors.png")
+        interrogation_img_path = os.path.join(
+            "rock_paper_scissors/sprites", "interrogation.png"
+        )
+
+        self.rock_img = QtGui.QPixmap(rock_img_path)
+        self.paper_img = QtGui.QPixmap(paper_img_path)
+        self.scissors_img = QtGui.QPixmap(scissors_img_path)
+        self.interrogation_img = QtGui.QPixmap(interrogation_img_path)
+
         # button setup
         self.comboBox.currentIndexChanged.connect(self.player_image_move_change)
         self.play_button.clicked.connect(self.play_round)
         # ------------------------------------------------------
 
+        self.player_move_label.setPixmap(self.rock_img)
+        # self.player_move_label.setPixmap(QtGui.QPixmap("rock_paper_scissors/sprites/rock.png"))
         self.selected_move = "Rock"
+        self.pc_move_label.setPixmap(self.interrogation_img)
 
         self.player_score = 0
         self.pc_score = 0
-
-        self.rock_img = QtGui.QPixmap(
-            "/home/blister-pack/Documents/code_projects/1WORK/Projects/rock_paper_scissors/sprites/rock.png"
-        )
-        self.paper_img = QtGui.QPixmap(
-            "/home/blister-pack/Documents/code_projects/1WORK/Projects/rock_paper_scissors/sprites/paper.png"
-        )
-        self.scissors_img = QtGui.QPixmap(
-            "/home/blister-pack/Documents/code_projects/1WORK/Projects/rock_paper_scissors/sprites/scissors.png"
-        )
 
     def player_image_move_change(self):
         """
@@ -71,9 +78,23 @@ class RockPaperScissorsApp(QtWidgets.QMainWindow, Ui_RockPaperScissors):
         make a popup window stating the winner and exit the program"""
 
         if self.player_score == 3:
-            print("Player wins")
+            self.winner_popup()
+            window.close()
         if self.pc_score == 3:
-            print("PC wins")
+            self.loser_popup()
+            window.close()
+
+    def winner_popup(self):
+        message = QMessageBox()
+        message.setWindowTitle("You won the game!!!")
+        message.setText("YOU WON YAY")
+        message.exec_()
+
+    def loser_popup(self):
+        message = QMessageBox()
+        message.setWindowTitle("Computer Wins")
+        message.setText("YOU LOST BOO")
+        message.exec_()
 
     # this game needs to be played differently than the original logic
     # originally, the logic was supposed to keep the game going until
