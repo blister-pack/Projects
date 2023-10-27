@@ -7,3 +7,7 @@ urlpatterns = [
     path("", views.home, name="blog-home"),
     path("about/", views.about, name="blog-about"),
 ]
+
+# irrelevant test comment
+# another
+# 3rd test
