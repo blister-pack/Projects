@@ -1,0 +1,7 @@
+<h1>Search results</h1>
+<p>Movies that match your search query:</p>
+{% if movies %}
+    {% for movie in movies %}<p>{{ movie.title }}</p>{% endfor %}
+{% else %}
+    <p>no results found</p>
+{% endif %}
