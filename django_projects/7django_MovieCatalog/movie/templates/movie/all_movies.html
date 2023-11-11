@@ -1,1 +1,5 @@
-{% for movie in movies %}<p>{{ movie }}</p>{% endfor %}
+{% for movie in movies %}
+    <p>
+        <a href={% url 'movie-details' movie.pk %}>{{ movie }}</a>
+    </p>
+{% endfor %}

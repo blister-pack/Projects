@@ -1,8 +1,8 @@
-from django.shortcuts import render
+from django.shortcuts import render, redirect
 
 from movie.forms import CreateMovieForm
 from .models import Movie
-
+from django.contrib import messages
 
 # Create your views here.
 
@@ -25,5 +25,13 @@ def search_movies(request, term):
 
 
 def create_movie(request):
-    form = CreateMovieForm()
+    if request.method == "POST":
+        form = CreateMovieForm(request.POST)
+        if form.is_valid():
+            form.save()
+            # movie_title = form.cleaned_data.get("title")
+            # messages.success(request, f"Movie saved - {movie_title}")
+            return redirect("movie-list")
+    else:
+        form = CreateMovieForm()
     return render(request, "movie/create_movie.html", {"form": form})
