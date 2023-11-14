@@ -1,0 +1,20 @@
+{% for number in list_of_numbers %}
+    {% if number|divisibleby:2 %}
+        <p style="color: blue;">{{ number }}</p>
+    {% else %}
+        <p style="color: red;">{{ number }}</p>
+    {% endif %}
+{% endfor %}
+<p>{{ greeting|upper }}</p>
+<p>{{ greeting|slice:"::-1" }}</p>
+<p>{{ user_info.first_name }} le {{ user_info.last_name }}</p>
+{% if is_vip %}
+    <p>
+        <strong>VIP Member</strong>
+    </p>
+{% else %}
+    <p>Regular Member</p>
+{% endif %}
+<p>{{ notes }}</p>
+<p>{{ notes|safe }}</p>
+{% now "F j, Y" %}
