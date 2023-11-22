@@ -1,0 +1,14 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Profile details</title>
+        <link rel="stylesheet" href="{% static "userapp/style.css" %}">
+    </head>
+    <body>
+        <p>Username is {{ detail_profiles.user_id }}</p>
+        <p>bio: {{ detail_profiles.bio }}</p>
+    </body>
+</html>
