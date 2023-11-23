@@ -1,0 +1,7 @@
+{% for article in articles %}
+    <ul>
+        <li>
+            <a href="{% url "article-detail" %}">{{ article }}</a>
+        </li>
+    </ul>
+{% endfor %}
