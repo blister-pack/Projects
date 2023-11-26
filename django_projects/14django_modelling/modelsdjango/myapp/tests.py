@@ -24,3 +24,8 @@ class ArticleTest(TestCase):
     def test_article_create_view_template(self):
         response = self.client.get(reverse("article-create"))
         self.assertTemplateUsed(response, "myapp/create_article_form.html")
+
+    def test_article_list_view_content(self):
+        response = self.client.get(reverse("article-list"))
+        self.assertContains(response, "<a>Test title</a>")
+        # this doesn't work and I don't know how to make it work
