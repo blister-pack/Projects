@@ -25,4 +25,4 @@ class ArticleCreateView(CreateView):
     model = Article
     form_class = CreateArticleForm
     template_name = "myapp/create_article_form.html"
-    success_url = "article/"
+    success_url = "/article/"

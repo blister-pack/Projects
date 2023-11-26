@@ -1,7 +1,19 @@
-{% for article in articles %}
-    <ul>
-        <li>
-            <a href="{% url "article-detail" %}">{{ article }}</a>
-        </li>
-    </ul>
-{% endfor %}
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Article list</title>
+        <link rel="stylesheet" href={% static "myapp/style.css" %}>
+    </head>
+    <body>
+        {% for article in articles %}
+            <ul>
+                <li>
+                    <a href="{% url "article-detail" pk=article.pk %}">{{ article }}</a>
+                </li>
+            </ul>
+        {% endfor %}
+    </body>
+</html>

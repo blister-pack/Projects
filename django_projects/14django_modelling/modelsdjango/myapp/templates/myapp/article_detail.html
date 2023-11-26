@@ -1,0 +1,15 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Article Details</title>
+        <link rel="stylesheet" href="{% static "myapp/style.css" %} ">
+    </head>
+    <body>
+        <h2>Details of article {{ article.pk }}</h2>
+        <p>{{ article.title }}</p>
+        <p>{{ article.content }}</p>
+    </body>
+</html>
