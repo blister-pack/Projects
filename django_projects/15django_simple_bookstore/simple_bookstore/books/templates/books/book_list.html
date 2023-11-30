@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Book list</title>
+    </head>
+    <body>
+        {% for book in books %}
+            <a href="{{ book.get_absolute_url }}">
+                <div>
+                    <h2>{{ book.title }}</h2>
+                    <h3>Written by {{ book.author }}</h3>
+                    <h5>Summary {{ book.description }}</h5>
+                </div>
+            </a>
+            <a href="{% url "book_create" %}">Add book</a>
+        {% endfor %}
+    </body>
+</html>

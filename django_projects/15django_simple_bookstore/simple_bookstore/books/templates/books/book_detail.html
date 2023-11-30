@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Book details</title>
+    </head>
+    <body>
+        <h1>{{ book.title }}</h1>
+        <h2>{{ book.author }}</h2>
+        <h4>{{ book.description }}</h4>
+        <h5>{{ book.published_date }}</h5>
+        <h5>For sale for {{ book.price }}</h5>
+        <div>
+            <a href="{{ book.get_update_url }}">Update</a>
+            <a href="{{ book.get_delete_url }}">Delete</a>
+        </div>
+    </body>
+</html>
