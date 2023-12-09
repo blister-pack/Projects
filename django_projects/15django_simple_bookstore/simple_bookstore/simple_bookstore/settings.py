@@ -58,7 +58,7 @@ ROOT_URLCONF = "simple_bookstore.urls"
 TEMPLATES = [
     {
         "BACKEND": "django.template.backends.django.DjangoTemplates",
-        "DIRS": [],
+        "DIRS": [BASE_DIR / "templates"],
         "APP_DIRS": True,
         "OPTIONS": {
             "context_processors": [
@@ -126,5 +126,5 @@ STATIC_URL = "static/"
 
 DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
-LOGIN_REDIRECT_URL = "/books/"
-LOGOUT_REDIRECT_URL = "/books/"
+LOGIN_REDIRECT_URL = "book_list"
+LOGOUT_REDIRECT_URL = "book_list"
