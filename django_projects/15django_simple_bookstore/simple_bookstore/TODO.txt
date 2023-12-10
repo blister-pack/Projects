@@ -1,2 +1,2 @@
-- check if settings.py redirect works with names instead of
-url paths
+x check if settings.py redirect works with names instead of
+url paths - it does

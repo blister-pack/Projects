@@ -14,33 +14,33 @@ from .forms import CreateBookForm
 # Create your views here.
 
 
-class BookListView(UserRequiredMixin, ListView):
+class BookListView(ListView):
     model = Book
     template_name = "books/book_list.html"
     context_object_name = "books"
 
 
-class BookDetailView(UserRequiredMixin, DetailView):
+class BookDetailView(DetailView):
     model = Book
     template_name = "books/book_detail.html"
     context_object_name = "book"
 
 
-class BookCreateView(UserRequiredMixin, CreateView):
+class BookCreateView(CreateView):
     model = Book
     form_class = CreateBookForm
     template_name = "books/book_create.html"
     success_url = "/books/"
 
 
-class BookUpdateView(UserRequiredMixin, UpdateView):
+class BookUpdateView(UpdateView):
     model = Book
     template_name = "books/book_update.html"
     fields = "__all__"
     success_url = "/books/"
 
 
-class BookDeleteView(UserRequiredMixin, DeleteView):
+class BookDeleteView(DeleteView):
     model = Book
     template_name = "books/book_delete.html"
     success_url = "/books/"

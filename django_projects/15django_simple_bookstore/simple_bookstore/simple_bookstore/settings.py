@@ -51,6 +51,7 @@ MIDDLEWARE = [
     "django.contrib.auth.middleware.AuthenticationMiddleware",
     "django.contrib.messages.middleware.MessageMiddleware",
     "django.middleware.clickjacking.XFrameOptionsMiddleware",
+    "accounts.authentication_middleware.AuthenticationMiddleware",
 ]
 
 ROOT_URLCONF = "simple_bookstore.urls"
@@ -128,3 +129,5 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 
 LOGIN_REDIRECT_URL = "book_list"
 LOGOUT_REDIRECT_URL = "book_list"
+LOGIN_URL = "login"
+
