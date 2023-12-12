@@ -6,6 +6,8 @@ from django.views.generic import (
     UpdateView,
     DeleteView,
 )
+
+from accounts.mixins import UserRequiredMixin
 from .models import Book
 from .forms import CreateBookForm
 
