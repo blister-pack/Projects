@@ -34,6 +34,7 @@ INSTALLED_APPS = [
     # myapps
     "books.apps.BooksConfig",
     "accounts.apps.AccountsConfig",
+    "rest_framework",
     # django stuff
     "django.contrib.admin",
     "django.contrib.auth",
@@ -130,4 +131,3 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 LOGIN_REDIRECT_URL = "book_list"
 LOGOUT_REDIRECT_URL = "book_list"
 LOGIN_URL = "login"
-
