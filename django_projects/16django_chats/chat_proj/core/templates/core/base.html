@@ -1,10 +1,27 @@
+{% load static %}
 <!DOCTYPE html>
 <html lang="en">
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <script src="https://cdn.tailwindcss.com"></script>
         <title>Djangochat</title>
-        <script> src="https://cdn.tailwindcss.com" </script>
+        <link rel="stylesheet" href="{% static "core/css/style.css" %}">
     </head>
-    <body class="bg-teal-600">Django</body>
+    <body>
+        <nav class="flex items-center justify-between px-4 py-6 bg-teal-800">
+            <div>
+                <a href="/" class="text-xl text-white">Djangochat</a>
+            </div>
+            <div class="flex items-center space-x-4">
+                <a href="/login/" class="text-white hover:text-gray-200">Log In</a>
+                <a href="/signup/" class="px-5 py-3 rounded-xl text-white bg-teal-600">Sign Up</a>
+            </div>
+        </nav>
+        <div class="p-10 lg:p-20 text-center">
+            <h1 class="text-3xl lg:text-6xl text-white">Djangochat</h1>
+        </div>
+        {% block content %}
+        {% endblock content %}
+    </body>
 </html>
