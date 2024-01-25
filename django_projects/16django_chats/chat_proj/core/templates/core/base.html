@@ -11,6 +11,12 @@
             {% endblock title %}
         </title>
         <link rel="stylesheet" href="{% static "core/css/style.css" %}">
+        <style>
+            .chat-messages {
+                height: 400px;
+                overflow-y: auto;
+            }
+        </style>
     </head>
     <body>
         <nav class="flex items-center justify-between px-4 py-6 bg-teal-800">
@@ -33,5 +39,7 @@
         </div>
         {% block content %}
         {% endblock content %}
+        {% block scripts %}
+        {% endblock scripts %}
     </body>
 </html>
